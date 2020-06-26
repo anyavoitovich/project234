@@ -1,0 +1,53 @@
+body {
+    background: #fafafa;
+    color: #333333;
+}
+
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.navbar {
+    margin-bottom: 2em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.dark {
+    color: #fff;
+}
+
+.form {
+    border: 0.25em solid lightgray;
+    border-radius: 0.2em;
+    padding: 2em;
+    margin: 0 auto;
+    width: 50%;
+    max-width: 400px;
+}
+
+.form input[type=submit] {
+    width: 100%;
+}
+
+.registr-form {
+    max-width: 600px;
+}
+
+.row {
+    margin-bottom: 2em;
+    justify-content: space-around;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 1.2em;
+  margin-bottom: 1em;
+}
