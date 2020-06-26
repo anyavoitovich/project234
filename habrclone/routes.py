@@ -1,6 +1,6 @@
 from habrclone import App, db
 from habrclone.models import User
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, request
 from habrclone.forms import LoginForm, RegistrationForm, AccountUpdateForm
 from flask_login import current_user, login_user, logout_user, login_required
 import os
