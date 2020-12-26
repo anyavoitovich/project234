@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
+<section class="content-section">
        {% if current_user.is_anonymous %}
               <h1>Привет,  добро пожаловать на мой сайт</h1>
             {% else %}
        <h1>Привет, {{ current_user.username }}, добро пожаловать на мой сайт</h1>
    {% endif %}
+</section>
 {% endblock %}

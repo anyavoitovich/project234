@@ -1,7 +1,7 @@
 from habrclone import App, db
-from habrclone.models import User
+from habrclone.models import User, New
 from flask import render_template, flash, redirect, url_for, request
-from habrclone.forms import LoginForm, RegistrationForm, AccountUpdateForm
+from habrclone.forms import LoginForm, RegistrationForm, AccountUpdateForm, NewsForm
 from flask_login import current_user, login_user, logout_user, login_required
 import os
 from PIL import Image
@@ -87,4 +87,23 @@ def account():
         form.username.data = current_user.username
     form.email.data = current_user.email
     avatar = url_for('static', filename='img/avatars/' + current_user.avatar)
-    return render_template('account.html', avatar=avatar, form=form)
+    news = New.query.filter_by(user_id=current_user.id)
+    return render_template('account.html', avatar=avatar, form=form, news=news)
+
+
+@App.route('/about')
+def about_page():
+    return render_template('about.html', title='О нас')
+
+
+@App.route('/blog', methods=['GET', 'POST'])
+def news():
+    form = NewsForm()
+    if form.validate_on_submit():
+        new = New(article=current_user.username, body=form.body.data, user_id=current_user.id )
+        db.session.add(new)
+        db.session.commit()
+        flash('Новость опубликована!', 'success')
+        return redirect(url_for('news'))
+    news = New.query.all()
+    return render_template('blog.html', title='Блог', form=form, news=news)

@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="4b7a23c4-a8db-413e-9943-202ee4bcf517">
-        <schema name="main" object-types="table, constraint, index, view, dataset trigger, column" />
+        <schema name="main" object-types="column, constraint, dataset trigger, view, table, index" />
       </connection>
     </loaded-nodes>
   </component>
@@ -36,17 +36,24 @@
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="4b7a23c4-a8db-413e-9943-202ee4bcf517" object-ref="schemas/main/tables/user" />
+      <object connection-id="4b7a23c4-a8db-413e-9943-202ee4bcf517" object-ref="schemas/main/tables/new" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="4b7a23c4-a8db-413e-9943-202ee4bcf517" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="4b7a23c4-a8db-413e-9943-202ee4bcf517" dataset="main.new" active-filter-id="EMPTY_FILTER">
+      <filter id="d3955fe9-c785-449e-aad8-9cc34b3216d9" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
     <filter-actions connection-id="4b7a23c4-a8db-413e-9943-202ee4bcf517" dataset="main.user" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
-    <last-used-providers />
+    <last-used-providers>
+      <object-type object-type="TABLE" editor-provider="DATA" />
+    </last-used-providers>
   </component>
   <component name="DBNavigator.Project.MethodExecutionManager">
     <method-browser />

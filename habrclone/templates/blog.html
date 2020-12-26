@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="content-section">
+
+    {% if current_user.is_authenticated %}
+    <h1>Привет, {{current_user.username }}! Напиши что-нибудь:</h1>
+    <form method="post">
+        {{ form.hidden_tag()}}
+        <div class="form-group">
+            {{ form.body.label }}
+            {{ form.body(class='form-control', cols=32, rows=6) }}
+
+            {% for error in form.body.errors %}
+            <div class="alert alert-danger"></div>
+            {% endfor %}
+        </div>
+        {{ form.submit(class='btn btn-info') }}
+    </form>
+    {% else %}
+    <h1>Писать новости можно только после регистрации/входа! <span class="badge badge-secondary"><a
+            href="{{ url_for ('register') }}"
+            class="dark">регистрация</a></span>
+        <span class="badge badge-success"><a
+                href="{{ url_for ('login') }}"
+                class="dark">вход</a></span>
+    </h1>
+    {% endif %}
+
+    <hr>
+
+    {% for new in news %}
+    <div class="card new">
+        <div class="card-header bg-secondary">
+            {{ new.author.username }}
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>{{ new.body }}</p>
+            </blockquote>
+        </div>
+    </div>
+
+
+    {% endfor %}
+
+
+</section>
+
+{% endblock %}

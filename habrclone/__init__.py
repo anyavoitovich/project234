@@ -10,4 +10,4 @@ db = SQLAlchemy(App)
 migrate = Migrate(App, db)
 login = LoginManager(App)
 
-from habrclone import routes, models
+from habrclone import routes, models, errors

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<section class="content-section">
 <div class="content-section">
     <div class="media">
         <img class="rounded-circle account-img" src="{{ avatar }}">
@@ -52,6 +52,23 @@
         </div>
     </form>
 
+    <hr>
+    {% for new in news %}
+    <div class="card new">
+        <div class="card-header bg-secondary">
+            {{ new.author.username }}
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>{{ new.body }}</p>
+            </blockquote>
+        </div>
+    </div>
+
+
+    {% endfor %}
+
 
 </div>
+    </section>
 {% endblock %}

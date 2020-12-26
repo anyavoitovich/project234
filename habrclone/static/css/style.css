@@ -1,8 +1,11 @@
+
 body {
     background: #fafafa;
     color: #333333;
 }
-
+i {
+front-size: 1.5em;
+}
 .content-section {
   background: #ffffff;
   padding: 10px 20px;
@@ -48,6 +51,14 @@ a.dark {
 .account-img {
   height: 125px;
   width: 125px;
-  margin-right: 1.2em;
+  margin-right: 20px;
   margin-bottom: 1em;
+}
+.new {
+    margin-bottom: 1.5em;
+
+}
+.card-header {
+    front-size: 24px;
+    color: #fff;
 }

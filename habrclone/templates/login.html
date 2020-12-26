@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-
+<section class="content-section">
 <div class=container">
-    <h1>новый пользовтель? <span class="badge badge-secondary"><a href="{{ url_for ('register') }}">регистрация</a></span></h1>
+    <h1>новый пользовтель? <span class="badge badge-secondary"><a
+            href="{{ url_for ('register') }}"
+            class="dark">регистрация</a></span></h1>
 <form action=" " method="post" novalidate>
     {{ form.hidden_tag() }}
     <div class="form-group">
@@ -37,4 +39,5 @@
         {{ form.submit(class="btn btn-success")}}
     </form>
 </div>
+    </section>
 {% endblock %}
